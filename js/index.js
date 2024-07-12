@@ -119,6 +119,7 @@ for (let i = 0; i < details.customers.length;i++) {
     document.title = `${details.customers[i].name} graph`;
   }
 }
+document.documentElement.scrollTop = 0;
 document.body.classList.add(`overflow-y-hidden`);
 document.querySelector(`.history`).innerHTML = addTransaction;
 return [amounts, dates];

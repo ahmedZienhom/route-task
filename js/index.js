@@ -27,13 +27,13 @@ function view() {
             </h2>
             <div id="collapse${collapseNum[i]}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body row">
-                    <div class="col-8 ps-3 pt-3">
+                    <div class="col-md-8 ps-3 pt-3">
                         <p class="text-capitalize fs-5 mt-2">id: <span class="font-bold">${details.customers[i].id}</span></p>
                         <p class="text-capitalize fs-5 mt-2">name: <span class="font-bold">${details.customers[i].name}</span></p>
                         <p class="text-capitalize fs-5 mt-2">total of transactions: <span class="font-bold">${getTotal(details.customers[i].id)[0]}</span></p>
                         <p class="text-capitalize fs-5 mt-2">numbers of transactions: <span class="font-bold">${getTotal(details.customers[i].id)[1]}</span></p>
                     </div>
-                    <div class="col-4 d-flex align-items-center justify-content-center">
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
                         <button data-id="${details.customers[i].id}" class="view btn btn-outline-primary">
                             <i class="fa-solid mb-4 fa-chart-simple fa-xl block"></i>
                             <p>view transactions graph</p>
@@ -119,7 +119,7 @@ for (let i = 0; i < details.customers.length;i++) {
     document.title = `${details.customers[i].name} graph`;
   }
 }
-
+document.body.classList.add(`overflow-y-hidden`);
 document.querySelector(`.history`).innerHTML = addTransaction;
 return [amounts, dates];
 };
@@ -151,6 +151,7 @@ function chart(doubleArr) {
   });
   
   document.querySelector(`i.fa-xmark`).addEventListener(`click`, _ => {
+    document.body.classList.remove(`overflow-y-hidden`);
     document.title = `graph system`;
     myChART.destroy();
     document.querySelector(`div.graph`).classList.replace(`d-flex`, `d-none`);
@@ -159,6 +160,7 @@ function chart(doubleArr) {
     document.title = `graph system`;
     myChART.destroy();
     document.querySelector(`div.graph`).classList.replace(`d-flex`, `d-none`);
+    document.body.classList.remove(`overflow-y-hidden`);
 })
 }
 

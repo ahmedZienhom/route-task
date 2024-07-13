@@ -11,15 +11,16 @@
     <h1 class="text-center mt-3 text-white">welcome to transaction graph system</h1>
 
 
-    <p class="fs-6 text-white mt-5 text-center">you can view specific graph from search</p>
+    <p class="fs-6 text-white mt-5 text-center">you can view specific graph from search </p>
     <div class="container">
-        <div class="px-5 d-flex align-items-center justify-content-center">
+        <div class="px-5 d-flex align-items-center w-75 mx-auto justify-content-center">
             <input placeholder="you can search for by name or amount" type="search"  class="form-control"/>
             <button class="btn text-white btn-danger search ms-3">search</button>
         </div>    
         <p class=" alert alert-danger px-2 d-none mx-5">your input dosenot require amy name or amount</p>
     </div>
-        <div class="accordion my-5 w-50 mx-auto" id="accordionExample"></div>
+
+    <div class="accordion w-50 my-5 mx-auto" id="accordionExample"></div>
 
 
 
@@ -28,6 +29,7 @@
     <i style="cursor: pointer;" class="fa-xmark pointer fa position-absolute top-0 end-0 text-white fa-2xl mt-4 me-4"></i>
     <div class="col-10 col-md-6 bg-white bg-opacity-100">
         <canvas id="myChart"></canvas>
+        <div class="detailsContainer"></div>
         <h3 class="h5 fw-bold text-center">history of transactions</h3>
         <div class="row history">
 
